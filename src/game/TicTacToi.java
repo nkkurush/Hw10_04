@@ -115,8 +115,6 @@ public class TicTacToi {
                 }
             }
             if(dig1==4){return true;}
-            System.out.println(table.length);
-            System.out.println(dig1+ " "+ dig2);
             /*if(dig1==4 || dig2==40  || hor==4 || ver==4 || dig_b==4 || dig_m==4 || dig3==4 || dig4==4){
                 return true;
             }*/
