@@ -70,12 +70,16 @@ public class TicTacToi {
         return table[x][y]=='.';
     }
     public boolean checkWin(char symbol){
-        int dig1=0,dig2=0,hor=0,ver=0;
+        int dig1=0,dig2=0,hor=0,ver=0,dig_m=0,dig_b=0,dig3=0,dig4=0;
         for(int i=0; i<table.length; i++){
             dig1=0;
             dig2=0;
             hor=0;
             ver=0;
+            dig_m=0;
+            dig_b=0;
+            dig3=0;
+            dig4=0;
             for(int j=0; j<table[i].length; j++){
                 if(i==j && table[i][j]==symbol){
                     dig1++;
@@ -89,8 +93,26 @@ public class TicTacToi {
                 if(table[j][i]==symbol){
                     ver++;
                 }
+                if(table.length-j-2>=0) {
+                    if (table[j][table.length - j - 2] == symbol) {
+                        dig_m++;
+                    }
+                }
+                if(j+1<table.length) {
+                    if (table[j + 1][table.length - j - 1] == symbol) {
+                        dig_b++;
+                    }
+                }
+                if(j+1<table.length){
+                    if(table[j][j+1]==symbol){
+                        dig3++;
+                    }
+                    if(table[j+1][j]==symbol){
+                        dig4++;
+                    }
+                }
             }
-            if(dig1==5 || dig2==5 || hor==4 || ver==4) return true;
+            if(dig1==5 || dig2==5 || hor==4 || ver==4 || dig_b==4 || dig_m==4 || dig3==4 || dig4==4) return true;
         }
         return false;
     }
