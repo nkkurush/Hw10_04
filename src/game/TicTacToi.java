@@ -72,7 +72,6 @@ public class TicTacToi {
     public boolean checkWin(char symbol){
         int dig1=0,dig2=0,hor=0,ver=0,dig_m=0,dig_b=0,dig3=0,dig4=0;
         for(int i=0; i<table.length; i++){
-            dig1=0;
             dig2=0;
             hor=0;
             ver=0;
@@ -112,7 +111,8 @@ public class TicTacToi {
                     }
                 }
             }
-            if(dig1==5 || dig2==5 || hor==4 || ver==4 || dig_b==4 || dig_m==4 || dig3==4 || dig4==4) return true;
+            System.out.println(dig1 + " " + dig2);
+            if(dig1==4 || dig2==40  || hor==4 || ver==4 || dig_b==4 || dig_m==4 || dig3==4 || dig4==4) return true;
         }
         return false;
     }
